@@ -1,6 +1,6 @@
 # Server Spinner
 Weird name, right?
-It would make much more sense if you understand the idea behind it :laughing: :laughing:
+It would make much more sense if you understand the idea behind it :joy: :joy:
 
 ----------
 
