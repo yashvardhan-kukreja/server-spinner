@@ -55,7 +55,9 @@ cat << EOF > app.js
 const express = require("express");
 const morgan = require("morgan");
 
-const server_id = process.env.BOOTSTRAP_SERVER_ID || Math.floor(Math.random()*100);
+let server_id = process.env.BOOTSTRAP_SERVER_ID;
+if (server_id == 0)
+  server_id = Math.floor(Math.random()*100);
 
 const app = express();
 const port = process.env.BOOTSTRAP_PORT || 80;
@@ -73,7 +75,7 @@ EOF
 
 ## Running the server side code
 PID=$!;
-if [ $BOOTSTRAP_BG_PROCESS = true  ]; then
+if [ $BOOTSTRAP_BG_PROCESS = true ]; then
   node app.js &
   sleep 2
   kill $PID
